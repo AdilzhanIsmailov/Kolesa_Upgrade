@@ -1,0 +1,16 @@
+actor: FunctionalTester
+modules:
+    enabled:
+        - \Helper\Functional
+        - \Helper\BaseHelper
+        - REST:
+            depends: PhpBrowser
+            url: 'http://api.izze.xyz/test/'
+
+    config:
+       PhpBrowser:
+           url: 'http://api.izze.xyz/test/'
+           headers:
+               Content-Type: application/json
+
+    step_decorators: ~    
