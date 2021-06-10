@@ -13,17 +13,16 @@ class mainTestCest
         $I->createUser();
     }
 
-    // Изменение и удаление данных пользователя
+    // Изменение данных пользователя (+ проверка nModified)
     public function putAndDeleteUser(\step\Functional\createUpdateDelete $I)
     {
-        $I->updateAndDeleteUser();
+        $I->updateUser();
     }
 
     /**
-     * Проверка на отсутствия обязательного ключа owner после delete
+     * Удаление пользователя (+ проверка deletedCount)
      */
     public function _after(\step\Functional\createUpdateDelete $I){
-        $I->sendGet('people?owner=Leka777kz');
-        $I->dontSeeResponseContainsJson(['owner' => 'Leka777kz']);
+        $I->deleteUser();
     }
 }
