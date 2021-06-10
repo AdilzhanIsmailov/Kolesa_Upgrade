@@ -14,7 +14,7 @@ class mainTestCest
     }
 
     // Изменение данных пользователя (+ проверка nModified)
-    public function putAndDeleteUser(\step\Functional\createUpdateDelete $I)
+    public function updateUserData(\step\Functional\createUpdateDelete $I)
     {
         $I->updateUser();
     }
