@@ -26,7 +26,7 @@ jobs:
         run: composer install
       - name: Install Faker
         run: composer require fzaninotto/Faker
-      - name: Run chromeDriver
+      - name: Run chromedriver
         run: nohup SCHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
         run: php vendor/bin/codecept run --steps -vvv --xml
