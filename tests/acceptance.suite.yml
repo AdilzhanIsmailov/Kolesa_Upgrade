@@ -7,8 +7,12 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - WebDriver:
-            url: https://prostochizh.github.io/form/
+        - WebDriver
+        - \Helper\Acceptance
+        - \Helper\BaseHelper
+    config:
+        WebDriver:
+            url: 'https://prostochizh.github.io/form/'
             host: localhost
             port: 9515
             browser: chrome
@@ -18,7 +22,5 @@ modules:
             pageload_timeout: 60
             capabilities:
                 goog:chromeOptions:
-                        args: [ "--headless", "--disable-gpu" ]
-        - \Helper\Acceptance
-        - \Helper\BaseHelper
+                         args: [ "--headless", "--disable-gpu" ]
 step_decorators: ~        
