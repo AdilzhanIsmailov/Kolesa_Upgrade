@@ -5,11 +5,8 @@ use Faker\Factory;
 
 class BaseHelper extends \Codeception\Module
 {
-    public function getFaker($locale = 'kk_KZ')
-    {
+    public function getFaker($locale = 'ru_RU'){
         $faker = Factory::create($locale);
-        $faker->addprovider(new CustomFakerProvider($faker));
-
         return $faker;
     }
 }

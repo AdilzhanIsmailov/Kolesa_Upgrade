@@ -7,20 +7,12 @@
 actor: AcceptanceTester
 modules:
     enabled:
-        - WebDriver
-        - \Helper\Acceptance
-        - \Helper\BaseHelper
-    config:
-        WebDriver:
-            url: 'https://prostochizh.github.io/form/'
+        - WebDriver:
+            url: http://automationpractice.com/index.php
             host: localhost
             port: 9515
             browser: chrome
-            window_size: maximize
-            request_timeout: 120
-            connection_timeout: 120
-            pageload_timeout: 60
-            capabilities:
-                goog:chromeOptions:
-                         args: [ "--headless", "--disable-gpu" ]
-step_decorators: ~        
+            window_size: 1600x900
+        - \Helper\Acceptance
+        - Asserts
+step_decorators: ~    
