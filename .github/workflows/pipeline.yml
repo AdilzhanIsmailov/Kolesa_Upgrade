@@ -2,7 +2,7 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -25,7 +25,7 @@ jobs:
       - name: Install Dependencies
         run: composer install
       - name: Install Faker
-        run: composer require fzaniotto/Faker
+        run: composer require fzaninotto/faker
       - name: Run chromeDriver
         run: nohup SCHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run tests
