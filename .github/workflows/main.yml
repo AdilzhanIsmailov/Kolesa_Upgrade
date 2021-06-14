@@ -9,16 +9,14 @@ jobs:
       - uses: nanasess/setup-php@master
         with:
           php-version: '7.4'
-      - name: Install dependecies
+      - name: Install dependencies
         run: composer install
       - name: Install Faker
         run: composer require fzaninotto/Faker
-      - name: Install REST
-        run: composer require --dev codeception/module-rest
       - name: Run chromedriver
         run: nohup $CHROMEWEBDRIVER/chromedriver --url-base=/wd/hub /dev/null 2>&1 &
       - name: Run test cases
-        run: php vendor/bin/codecept run --steps -vvv --xml
+        run: php vendor/bin/codecept run functional --steps -vvv --xml
       - name: SUPRISE
         run: echo THANKS KOLESA UPGRADE!!!
       - name: JUnit Report Action
